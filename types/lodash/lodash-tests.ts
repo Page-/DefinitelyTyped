@@ -4297,6 +4297,13 @@ fp.now(); // $ExpectType number
     if (_.isObject(anything)) {
         anything; // $ExpectType object
     }
+    const value: AbcObject | number = anything;
+    if (fp.isObject(value)) {
+        value; // $ExpectType AbcObject
+    }
+    if (_.isObject(value)) {
+        value; // $ExpectType AbcObject
+    }
 }
 
 // _.isObjectLike

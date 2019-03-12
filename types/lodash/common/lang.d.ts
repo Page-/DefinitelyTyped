@@ -1225,6 +1225,7 @@ declare module "../index" {
          * @return Returns true if value is an object, else false.
          */
         isObject(value?: any): value is object;
+        isObject<T>(value?: T): value is T extends object ? T : never;
     }
 
     interface LoDashImplicitWrapper<TValue> {
@@ -1232,6 +1233,7 @@ declare module "../index" {
          * see _.isObject
          */
         isObject(): this is LoDashImplicitWrapper<object>;
+        isObject<T extends object>(): this is LoDashImplicitWrapper<T>;
     }
 
     interface LoDashExplicitWrapper<TValue> {
